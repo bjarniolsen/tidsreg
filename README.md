@@ -1,24 +1,14 @@
 # PROJECT NAME
 
-**This is a default README file. Please edit it to fit your new shining project.**
-
-Short synopsis describing the project.
-Umbraco / Sitecore / Sharepoint / 
-
-Need help with Markdown syntax?
-[cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet")
+Tidsreg
 
 
 
 ## Contributors
 
-Team members: Ozzy Osbourne (Frontend), Nikki Sixx (Backend), Lemmy Kilmister (Project lead), Wendy O. Williams (Design), Rob Halford (Backend).
+Team members: Bjarni Olsen
 
-Date of creation: 10/09 - 2014
-
-Modified by: Udo Dirkschneider (Frontend)
-
-Modified date: 16/10 2014
+Date of creation: 13/04 - 2015
 
 
 
@@ -122,16 +112,3 @@ Or if you need to Livereload another browser (eg. on a mobile phone/tablet) then
 `<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>`
 
 > Remember to remove it before you deploy to production!
-
-
-## BACKEND DOCUMENTATION
-
-[Projectroom](https://url/to/projectroom/documentation/)
-
-> Paste the content of DeveloperGuide.docx here
-
-
-
-
-## Troubleshoot'n
-...
