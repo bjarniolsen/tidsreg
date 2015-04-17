@@ -18,14 +18,18 @@
     GENEREL ELEMENTS
    ============== */
 
+* + * {
+	margin-top: 1.5em;
+}
+
 body {
 	margin: 0;
 	padding: 1em;
     color: $text-color;
 	overflow-y: scroll;
-	font: 12px Arial, Helvetica, sans-serif;
+	font: 1em Arial, Helvetica, sans-serif;
 	background: $body-bg;
-	line-height: 1.4;
+	line-height: 1.5em;
 	@media all and (min-width: 980px) {
 		max-width: 1200px;
 		margin: 0 auto;
@@ -45,8 +49,18 @@ body {
 }
 
 input, textarea:focus, input:focus {
-	outline: 0;
-	border: 0;
+}
+
+label {
+	display: inline-block;
+
+	& + label {
+		margin-left: 20px;
+	}
+
+	> span {
+		display: block;
+	}
 }
 
 img {
@@ -57,6 +71,24 @@ img {
 /* ==============
     DIS/PLAY CSS
    ============== */
+.project-item {
+	padding: 1.5em;
+	border: 1px solid #e5e5e5;
+
+	> .buttons {
+		display: inline-block;
+		margin-left: 1.5em;
+	}
+
+	> .timer {
+		display: inline-block;
+		margin-left: 1.5em;
+		padding: 1em;
+		font-size: 1.5em;
+		color: #eee;
+		background-color: #303030;
+	}
+}
 
 // Helper classes
 @import "_helpers";

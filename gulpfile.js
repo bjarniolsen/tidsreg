@@ -49,6 +49,11 @@ gulp
 		
 		// WATCH events
 		
+		// Watch HTML files and refresh browser
+		gulp
+			.watch(['*.html'])
+			.on('change', livereload.changed);
+		
 		// Watch DIST folder and refresh browser
 		gulp
 			.watch(['static/dist/**'])

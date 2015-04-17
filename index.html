@@ -14,7 +14,7 @@
     	<!-- Add to web.config -->
     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    	<title>Frontline</title>
+    	<title>Tidsreg</title>
 
     	<meta name="description" content="">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,9 +31,36 @@
 			<p class="chromeframe">Du bruger en <strong>forældet</strong> browser. Vær venlig at <a href="http://browsehappy.com/">opgrader din browser</a> eller <a href="http://www.google.com/chromeframe/?redirect=true">aktiver Google Chrome Frame</a> for at forbedre din weboplevelse.</p>
 		<![endif]-->
 
-		<h1>Frontline</h1>
-		<p>Bacon ipsum dolor amet ball tip prosciutto hamburger meatloaf pork loin ham hock landjaeger jerky cupim frankfurter tail. Landjaeger ball tip jerky, frankfurter tri-tip meatball ham hock pork belly jowl shank tail ground round flank strip steak. Corned beef ham boudin rump prosciutto filet mignon beef. Brisket pork loin sirloin landjaeger pork chop tenderloin pig doner turkey venison ground round jowl short ribs.</p>
-		<p>Short loin hamburger shank porchetta cow ham, fatback turducken leberkas doner pastrami pancetta alcatra cupim. Rump meatball strip steak brisket shoulder prosciutto hamburger. Meatloaf ball tip filet mignon swine porchetta. T-bone swine fatback bacon.</p>
+		<h1>Tidsreg</h1>
+
+		<form action="/" name="">
+			<div class="project-item">
+				<label>
+					<span>Project</span>
+					<select name="projects">
+						<option value="nordija">Nordija</option>
+						<option value="postdanmark">Post Danmark</option>
+						<option value="LEO">LEO PSO</option>
+					</select>
+				</label>
+
+				<label>
+					<span>Comment</span>
+					<textarea></textarea>
+				</label>
+
+				<p class="buttons">
+					<button name="start" type="button">START</button>
+					<button name="pause" type="button">PAUSE</button>
+					<button name="restart" type="button">RESTART</button>
+					<button name="end" type="submit">SLUT</button>
+				</p>
+
+				<p class="timer">
+					<span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span> 
+				</p>
+			</div>
+		</form>
 
     	<!--[if lt IE 9]>
 			<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
