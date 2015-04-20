@@ -24,6 +24,7 @@
             minutes = 0,
             hours = 0,
             timerId,
+            projects = [],
             // Reference to the current scope, usable inside callbacks et al. to reference this module (instead of whatever
             // scope the function might be running in.)
             selfScope = this;
@@ -49,10 +50,10 @@
             restartTimer: function () {
 				clearInterval(timerId);
 				timerId = null;
-            	firstInit = 1,
-            	seconds = 0,
-            	minutes = 0,
-            	hours = 0,
+            	firstInit = 1;
+            	seconds = 0;
+            	minutes = 0;
+            	hours = 0;
 				updateTimer(seconds, minutes, hours);
 				eventHandlers.startTimer();
             },
@@ -60,7 +61,7 @@
                 e.preventDefault();
 				clearInterval(timerId);
 				timerId = null;
-            	firstInit = 1,
+            	firstInit = 1;
 				eventHandlers.pauseTimer();
             }
         };
@@ -93,13 +94,27 @@
         }
 
         function saveProject() {
-            window.console.log("Project saved!", hours, minutes, seconds);
+			var project = {
+				project: DOM.container.find('select[name="projects"] option:selected').val(),
+				comment: DOM.comment.val(),
+				startTime: 0,
+				endTime: hours + ":" + minutes + ":" + seconds
+			};
+			projects.push(project);
+            localStorage.setItem("DISproject", JSON.stringify(projects));
+            addToView(project);
         } 
 
-        this.someFunction = function () {
-            // Return the "selfScope", as explained in the comment block above.
-            return selfScope;
-        };
+        function addToView(item) {
+        	var li = "<li>";
+        	for (var key in item) {
+				if (item.hasOwnProperty(key)) {
+					li += item[key] + ", ";
+				}
+			}
+        	li += "</li>";
+        	DOM.projectView.append(li);
+        }
 
         function init() {
             DOM.container = $(configuration.container);
@@ -111,6 +126,7 @@
                 DOM.hours = DOM.timer.find(".hours");
                 DOM.minutes = DOM.timer.find(".minutes");
                 DOM.seconds = DOM.timer.find(".seconds");
+                DOM.comment = DOM.container.find("textarea");
                 DOM.startTimerButton = DOM.container.find("[name=start]");
                 DOM.startTimerButton.click(eventHandlers.startTimer);
                 DOM.pauseTimerButton = DOM.container.find("[name=pause]");
@@ -119,6 +135,7 @@
                 DOM.restartTimerButton.click(eventHandlers.restartTimer);
                 DOM.submitButton = DOM.container.find("[type=submit]");
                 DOM.submitButton.click(eventHandlers.finishProject);
+                DOM.projectView = $(".project-view");
                 DOM.container.on("dis.refresh", eventHandlers.refreshAll);
             }
         }

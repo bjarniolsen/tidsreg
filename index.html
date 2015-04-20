@@ -34,6 +34,11 @@
 		<h1>Tidsreg</h1>
 
 		<form action="/" name="">
+			<div class="controls">
+				<button name="week" type="button">Ugenummer</button>
+				<button name="day" type="button">idag</button>
+				<button name="clear" type="button">Slet alt</button>
+			</div>
 			<div class="project-item">
 				<label>
 					<span>Project</span>
@@ -61,6 +66,8 @@
 				</p>
 			</div>
 		</form>
+
+		<ul class="project-view"></ul>
 
     	<!--[if lt IE 9]>
 			<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
